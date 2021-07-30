@@ -1,6 +1,7 @@
 *{
     padding: 0;
     margin: 0;
+    box-sizing:border-box;
 }
 
 body {
@@ -16,10 +17,59 @@ ul {
     list-style: none;
     display: flex;
     flex-direction: row;
+    background: gray;
     justify-content: center;
     justify-content: space-between;
+    gap: 20px;
+    padding: 0;
 }
 
 .icon-social {
   width: 80px;
 }
+
+header {
+    display: flex;
+    justify-content: space-around;
+    height: 80px;
+    align-items: center;
+  }
+  
+  .menu a {
+    color: #3f3f6c;
+    margin-left: 50px;
+    text-decoration: none;
+    font-size: 22px;
+  }
+  
+  .atendimento button {
+    background-color: #3751ff;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    padding: 10px;
+    border-radius: 40px;
+    cursor: pointer;
+  }
+  
+  #menu-mobile {
+    display: none;
+  }
+  #logo {
+    transition: transform 1s;
+  }
+  #logo:hover {
+    transform: scale(1.5);
+  }
+  
+  #atendimento {
+    position: fixed;
+    bottom: 10px;
+    right: 50px;
+    background: green;
+    border-radius: 10px;
+    padding: 13px;
+    color: #fff;
+  }
+  
+  

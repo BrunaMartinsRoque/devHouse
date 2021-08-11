@@ -20,13 +20,13 @@
 
     <nav class="menu">
         <a href="/home">Home</a>
-        <a href="">Produtos</a>
+        <a href="/produtos">Produtos</a>
         <a href="/depoimentos">Depoimentos</a>
         <a href="/blog">Blog</a>
         <% if(typeof usuario !== "undefined") {%>
             <h6>Olá <%= usuario.nome %></h6>
-            <% }    else {
-              <a href=""> Login </a>
+            <% }    else { %>
+              <a href="/login"> Login </a>
            <% }  %>
         <a href="/contato">Contato</a>
       </nav>

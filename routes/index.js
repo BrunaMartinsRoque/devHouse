@@ -1,11 +1,12 @@
+const { Router } = require("express");
 const express = require("express");
-const path = require("path");
+
 const routes = express.Router();
-const depoimentos = require ("../models/depoimentos");
+
 const produtoController = require("../controllers/produtoController");
 
 
-routes.get("/", produtoController.home);
+routes.get("/", produtoController.homeRedirect);
 
 routes.get("/home", produtoController.home);
 
@@ -15,10 +16,13 @@ routes.get("/blog", produtoController.blog);
 
 routes.get("/contato", produtoController.contato); 
 
+routes.get("/login", produtoController.login); 
+
 routes.post("/receber-contato", produtoController.receberContato); 
 
 routes.get("/depoimentos", produtoController.depoimentos);
 
+routes.get("/cadastrar-depoimento", produtoController.exibirFormDepoimento);
+routes.post("/cadastrar-depoimento", produtoController.cadastrarDepoimento);
 
 module.exports = routes;
-module.exports = produtoController;

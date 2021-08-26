@@ -33,6 +33,9 @@ const produtoController = {
     res.render("login");
   },
 
+  produtosite: (req, res) => {
+    res.render("produtosite");
+  },
   receberContato: (req, res) => {
     res.render("Contato recebido por:" + req.body.nome);
   },

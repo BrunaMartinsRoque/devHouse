@@ -1,16 +1,18 @@
 const express = require("express");
-const produtoController = require("../controllers/produtoController");
+
+const produtosController = require("../controllers/produtos");
+const uploads = require('../middlewares/uploads')
 const routes = express.Router();
 
-routes.get("/produtos/lista", produtoController.listarProdutos);
 
-routes.get("/produtos/:id", (req, res) => {
-  if (typeof Number(req.params.id) !== "number") {
-    return res.send("Digite um número");
-  }
 
-  res.send("Página de Produtos");
-});
 
-module.exports = routes 
+
+
+routes.get("/admin/cadastro-produto", produtosController.cadastrarProduto);
+routes.get("/admin/produtos", produtosController.listarProdutosAdmin);
+routes.post("/salvar-produto", uploads.single('imagem'), produtosController.salvarProduto);
+routes.delete("/excluir-produto/:id", produtosController.excluirProduto);
+
+module.exports = routes; 
 
